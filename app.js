@@ -69,7 +69,7 @@ client.connect(function(err, client) {
       { _id: ObjectId(req.params.id) },
       function(err, response) {
         res.json(response);
-      },
+      }
     );
   });
 
