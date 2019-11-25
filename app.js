@@ -58,8 +58,8 @@ client.connect(function(err, client) {
       { $set: { name, batch } },
       { returnOriginal: false },
       function(err, response) {
-        const newRecord = response.value;
-        res.json(response);
+        const updatedRecord = response.value;
+        res.json(updatedRecord);
       }
     );
   });
@@ -68,7 +68,8 @@ client.connect(function(err, client) {
     db.collection("students").findOneAndDelete(
       { _id: ObjectId(req.params.id) },
       function(err, response) {
-        res.json(response);
+        const deletedRecord = response.value;
+        res.json(deletedRecord);
       }
     );
   });
